@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On The Way - Explore Top Destinations</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Explore Top Destinations with On The Way</h1>
+            <p>Discover the world’s most beautiful places with our exclusive travel packages.</p>
+            <a href="#tours" class="btn-primary">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="service-item">
+            <i class="icon-tour"></i>
+            <h3>Tours</h3>
+            <p>Unforgettable travel experiences crafted just for you.</p>
+        </div>
+        <div class="service-item">
+            <i class="icon-event"></i>
+            <h3>Event Planning</h3>
+            <p>Perfectly planned events tailored to your needs.</p>
+        </div>
+        <div class="service-item">
+            <i class="icon-corporate"></i>
+            <h3>Corporate Packages</h3>
+            <p>Seamless corporate events with a touch of class.</p>
+        </div>
+    </section>
+
+    <!-- Tour Listings -->
+    <section class="tour-listings">
+        <div class="filter-options">
+            <select>
+                <option value="all">All Destinations</option>
+                <option value="beach">Beach</option>
+                <option value="mountain">Mountain</option>
+                <option value="adventure">Adventure</option>
+            </select>
+            <select>
+                <option value="price">Price</option>
+                <option value="low-high">Low to High</option>
+                <option value="high-low">High to Low</option>
+            </select>
+        </div>
+        <div class="tour-item">
+            <img src="tour-image.jpg" alt="Tour Image">
+            <h4>Tropical Paradise</h4>
+            <p>7 days of sun, sand, and relaxation.</p>
+            <a href="#" class="btn-secondary">View Details</a>
+        </div>
+        <!-- More tour items can be added here -->
+    </section>
+
+    <!-- Customize Tour -->
+    <section class="customize-tour">
+        <h3>Customize Your Tour</h3>
+        <form>
+            <label for="activities">Choose Activities:</label>
+            <select id="activities">
+                <option value="hiking">Hiking</option>
+                <option value="snorkeling">Snorkeling</option>
+            </select>
+            <label for="accommodation">Accommodation Type:</label>
+            <select id="accommodation">
+                <option value="standard">Standard</option>
+                <option value="luxury">Luxury</option>
+            </select>
+            <button type="submit" class="btn-primary">Submit</button>
+        </form>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonial">
+            <p>"Our trip to Bali was unforgettable, thanks to On The Way!" - Sarah & John</p>
+        </div>
+        <div class="testimonial">
+            <p>"The team made our corporate retreat seamless and enjoyable." - XYZ Corp.</p>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="story">
+            <img src="story-image.jpg" alt="Success Story">
+            <h4>Majestic Alps Adventure</h4>
+            <p>A thrilling journey through the Alps with a group of adventure enthusiasts.</p>
+            <a href="#" class="btn-secondary">Read More</a>
+        </div>
+        <!-- More stories can be added here -->
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-form">
+        <h3>Book Your Tour</h3>
+        <form>
+            <label for="tour">Select Tour:</label>
+            <select id="tour">
+                <option value="paradise">Tropical Paradise</option>
+                <option value="alps">Majestic Alps</option>
+            </select>
+            <label for="dates">Select Dates:</label>
+            <input type="date" id="dates">
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" min="1">
+            <button type="submit" class="btn-primary">Book Now</button>
+        </form>
+    </section>
+
+    <!-- Live Chat -->
+    <div class="live-chat">
+        <a href="chat.html" class="btn-primary">Chat with Us</a>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <h3>Latest Travel Tips & Event Ideas</h3>
+        <div class="blog-post">
+            <img src="blog-image.jpg" alt="Blog Post">
+            <h4>Top 10 Destinations for 2024</h4>
+            <p>Explore the must-visit places for your next vacation.</p>
+            <a href="#" class="btn-secondary">Read More</a>
+        </div>
+        <!-- More blog posts can be added here -->
+    </section>
+
+    <!-- Interactive Map -->
+    <section class="interactive-map">
+        <h3>Explore Our Destinations</h3>
+        <iframe src="https://maps.google.com" width="100%" height="400px"></iframe>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <h3>Travel Moments</h3>
+        <div class="gallery-grid">
+            <img src="gallery-image1.jpg" alt="Travel Photo">
+            <img src="gallery-image2.jpg" alt="Travel Photo">
+            <!-- More photos can be added here -->
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="special-offers">
+        <h3>Current Deals</h3>
+        <div class="offer-item">
+            <h4>Summer Special: 20% Off</h4>
+            <p>Book your summer getaway now and save 20% on all packages.</p>
+            <a href="#" class="btn-secondary">Claim Offer</a>
+        </div>
+        <!-- More offers can be added here -->
+    </section>
+
+    <!-- Social Feed -->
+    <section class="social-feed">
+        <h3>Follow Us</h3>
+        <div class="social-feed-widget">
+            <img src="insta-post1.jpg" alt="Instagram Post">
+            <img src="insta-post2.jpg" alt="Instagram Post">
+            <!-- More social media posts can be added here -->
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <h4>What is the cancellation policy?</h4>
+            <p>You can cancel your booking up to 48 hours before the start date for a full refund.</p>
+        </div>
+        <!-- More FAQs can be added here -->
+    </section>
+
+    <!-- User Account -->
+    <section class="user-account">
+        <h3>Your Account</h3>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <button type="submit" class="btn-primary">Login</button>
+        </form>
+    </section>
+
+    <!-- Wishlist -->
+    <section class="wishlist">
+        <h3>Your Wishlist</h3>
+        <ul>
+            <li><a href="#">Tropical Paradise</a></li>
+            <!-- More wishlist items can be added here -->
+        </ul>
+    </section>
+
+    <!-- Destination Page -->
+    <section class="destination-page">
+        <h2>Tropical Paradise</h2>
+        <p>Discover the beauty of our tropical paradise tours, where you can relax and unwind on stunning beaches.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h3>Contact Us</h3>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+            <label for="message">Message:</label>
+            <textarea id="message"></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+        <div class="contact-info">
+            <p>Email: info@ontheway.in</p>
+            <p>Phone: +91-8219559908</p>
+        </div>
+    </section>
+
+    <!-- Client Dashboard -->
+    <section class="client-dashboard">
+        <h3>Your Event Dashboard</h3>
+        <p>Track your event planning progress, upload guest lists, and manage RSVPs all in one place.</p>
+    </section>
+
+    <!-- Polls & Surveys -->
+    <section class="polls-surveys">
+        <h3>Your Opinion Matters</h3>
+        <p>Vote in our latest poll and help shape future travel experiences.</p>
+        <a href="#" class="btn-primary">Take Survey</a>
+    </section>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="On The Way Logo"></a>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="corporate.html">Corporate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h4>About On The Way</h4>
+                <p>Your trusted travel partner for unforgettable experiences.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: info@ontheway.in</p>
+                <p>Phone: +91-8219559908</p>
+                <p>Address: 123 Travel Lane, Shimla, India</p>
+            </div>
+        </div>
+        <div class="footer-social">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 On The Way. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script> <!-- Link to external JS -->
+</body>
+
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Details - On the way</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #7ab7f3; /* Light background color */
+            padding: 10px 20px; /* Padding around the header */
+            background-size: cover;
+            background-position: center;
+            color: black;
+            text-align: left;
+            border-bottom: 2px solid #7ab7f3;
+        }
+        /* Optional: Adjust the header's layout if needed */
+header nav ul {
+    margin-left: auto; /* Align menu items to the right if logo is left-aligned */
+}
+
+nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content:left ;
+            background: rgb(252, 250, 250); /* Semi-transparent background for better text readability */
+            padding: 10px 0;
+            
+        }
+
+        nav ul li {
+            margin: 0 15px; /* Space between menu items */
+        }
+
+        nav ul li a {
+            color: #0e0000; /* Color for menu items */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logo {
+    height: 50px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+        .hero {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJOsqEi0WC1CLWe_wYAVkMDKZTTsVA7dODQ&s'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .hero button {
+            background: #7ab7f3; 
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for button */
+        }
+
+        .hero button:hover {
+            background: #7ab7f3; 
+        }
+
+       /* Main Container */
+       .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* Tour Details Styles */
+        .tour-details img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tour-details img:hover {
+            transform: scale(1.05);
+        }
+
+        .tour-details h1 {
+            margin: 20px 0;
+            font-size: 2.5em;
+            color: #0984e3;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #0984e3;
+            padding-bottom: 10px;
+        }
+
+        .tour-details p {
+            margin: 10px 0;
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .tour-details h2 {
+            margin-top: 20px;
+            font-size: 2em;
+            border-bottom: 2px solid #74b9ff;
+            padding-bottom: 10px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tour-details ul {
+            list-style: disc;
+            margin-left: 20px;
+            color: #555;
+        }
+
+        /* Button Styles */
+        .tour-details .btn {
+            background: linear-gradient(to right, #74b9ff, #0984e3);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tour-details .btn:hover {
+            background: linear-gradient(to right, #0984e3, #74b9ff);
+        }
+
+
+        .view-details-btn {
+            background: #7ab7f3; 
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            border-radius: 8px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+        }
+
+        .tour:hover .view-details-btn {
+            opacity: 1;
+        }
+
+        .view-details-btn:hover {
+            background: #7ab7f3; 
+        }
+
+        .search-bar, .special-offers, .newsletter-signup, .testimonials {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .search-bar input[type="text"], .search-bar button,
+        .newsletter-signup input[type="email"], .newsletter-signup button {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .search-bar button, .newsletter-signup button {
+            background: #7ab7f3; 
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-bar button:hover, .newsletter-signup button:hover {
+            background: #7ab7f3; 
+        }
+
+        .offer {
+            margin-bottom: 20px;
+        }
+
+        .offer img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial {
+            border-left: 4px solid #7ab7f3; 
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        .btn {
+    background: #7ab7f3; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for button */
+        }
+
+       .btn:hover {
+    background: #7ab7f3; 
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        .btn:active {
+    background: #7ab7f3; 
+    transform: scale(0.98); /* Slightly shrink button on click */
+        }
+
+        
+
+        /* Contact section specific styling */
+/* Footer styles */
+footer {
+    background-color: #282c34; /* Dark background color */
+    color: #ffffff; /* White text color */
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+    border-bottom: 2px solid #7ab7f3;
+    
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-bottom: 2px solid #7ab7f3;
+}
+
+.footer-section {
+    margin: 20px 0;
+   
+}
+
+.footer-section h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #ffffff; /* White heading color */
+    border-bottom: 2px solid #7ab7f3;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section form {
+    margin: 0;
+    padding: 0;
+    color: #dddddd; /* Light gray text color */
+    
+}
+
+.footer-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #bbbbbb; /* Gray link color */
+    text-decoration: none;
+     
+}
+
+.footer-section ul li a:hover {
+    color: #ffffff; /* White link color on hover */
+}
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #bbbbbb; /* Gray social icon color */
+    font-size: 20px;
+}
+
+.social-icons a:hover {
+    color: #ffffff; /* White social icon color on hover */
+}
+
+.reviews h2 {
+            font-size: 2em;
+            color: #0984e3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .review {
+            margin-bottom: 20px;
+            border-left: 4px solid #74b9ff;
+            padding-left: 15px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review h3 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #333;
+        }
+
+        .review p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+
+    </style>
+ <script>
+    function getTourDetails() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tour = urlParams.get('tour');
+
+        const tourDetails = {
+            shimla: {
+                title: "Shimla Holiday Package",
+                image: "https://www.sterlingholidays.com/activities/shimla/the%20ridge.jpg.imgw.1280.1280.jpeg",
+                description: "Discover the breathtaking beauty of Shimla, the queen of hills, with our exclusive Shimla Holiday Package.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Shimla and transfer to hotel. Explore Mall Road in the evening.</li>
+                        <li><strong>Day 2:</strong> Full-day sightseeing tour including The Ridge, Jakhoo Temple, and Christ Church.</li>
+                        <li><strong>Day 3:</strong> Excursion to Kufri for adventure activities and panoramic views.</li>
+                        <li><strong>Day 4:</strong> Visit to the Summer Hill and return to hotel. Departure in the evening.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹15,000 per person. The price includes accommodation, breakfast, and guided tours.",
+                inclusions: `
+                    <ul>
+                        <li>Accommodation in a 3-star hotel</li>
+                        <li>Daily breakfast</li>
+                        <li>Guided sightseeing tours</li>
+                        <li>All transfers by private vehicle</li>
+                        <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                    <ul>
+                        <li>Travel insurance</li>
+                        <li>Lunch and dinner</li>
+                        <li>Entry fees to monuments and activities</li>
+                        <li>Personal expenses and tips</li>
+                        <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                `
+            },
+            manali: {
+                title: "Manali Adventure",
+                image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/2c/33/5f/at-the-time-of-summers.jpg",
+                description: "Experience the serene beauty of Manali with our holiday package.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Manali and transfer to hotel. Explore Mall Road in the evening.</li>
+                <li><strong>Day 2:</strong> Visit Solang Valley and Rohtang Pass for adventure activities.</li>
+                <li><strong>Day 3:</strong> Sightseeing tour including Hidimba Temple, Manu Temple, and Vashisht Baths.</li>
+                <li><strong>Day 4:</strong> Visit Old Manali and return to hotel. Departure in the evening.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹18,000 per person. The price includes accommodation, breakfast, and guided tours. Additional costs may apply for activities and meals not mentioned in the itinerary.",
+                inclusions: `
+                    <ul>
+                        <li>Accommodation in a 3-star hotel</li>
+                <li>Daily breakfast</li>
+                <li>Guided sightseeing tours</li>
+                <li>All transfers by private vehicle</li>
+                <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                    <ul>
+                        <li>Travel insurance</li>
+                <li>Lunch and dinner</li>
+                <li>Entry fees to monuments and activities</li>
+                <li>Personal expenses and tips</li>
+                <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                `
+            },
+            kullu: {
+                title: "Kullu Holiday Package",
+                image: "https://www.holidify.com/images/bgImages/KULLU.jpg",
+                description: "Discover the scenic beauty and vibrant culture of Kullu with our exclusive package.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Kullu and transfer to hotel. Evening free for leisure.</li>
+                        <li><strong>Day 2:</strong> Full-day sightseeing tour including Raghunath Temple, Bijli Mahadev Temple, and Great Himalayan National Park.</li>
+                        <li><strong>Day 3:</strong> Excursion to Manikaran to explore its hot springs and temples.</li>
+                        <li><strong>Day 4:</strong> Visit to Naggar Castle and Roerich Art Gallery. Departure in the evening.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹15,000 per person. The price includes accommodation, breakfast, and guided tours.",
+                inclusions: `
+                    <ul>
+                        <li>Accommodation in a 3-star hotel</li>
+                        <li>Daily breakfast</li>
+                        <li>Guided sightseeing tours</li>
+                        <li>All transfers by private vehicle</li>
+                        <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                    <ul>
+                        <li>Travel insurance</li>
+                        <li>Lunch and dinner</li>
+                        <li>Entry fees to monuments and activities</li>
+                        <li>Personal expenses and tips</li>
+                        <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                `
+            },
+            kinnaur: {
+                title: "Kinnaur Exploration Package",
+                image: "https://www.travelchhutichhuti.com/images/kinnaur-kalpa-sangla-tour-package-from-kolkata.jpg",
+                description: "Embark on an adventurous journey through the untouched landscapes of Kinnaur.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Kinnaur and transfer to hotel. Evening at leisure.</li>
+                        <li><strong>Day 2:</strong> Visit to Sangla Valley and Chitkul, the last inhabited village near the Indo-Tibet border.</li>
+                        <li><strong>Day 3:</strong> Full-day tour of Kalpa including visits to Kalpa Village, Suicide Point, and Kinnaur Kailash views.</li>
+                        <li><strong>Day 4:</strong> Explore the ancient temples and monasteries in Nako and Tabo. Departure in the evening.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹22,000 per person. The price includes accommodation, breakfast, and guided tours.",
+                inclusions: `
+                    <ul>
+                        <li>Accommodation in traditional guesthouses</li>
+                        <li>Daily breakfast</li>
+                        <li>Guided sightseeing tours</li>
+                        <li>All transfers by private vehicle</li>
+                        <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                    <ul>
+                        <li>Travel insurance</li>
+                        <li>Lunch and dinner</li>
+                        <li>Entry fees to monuments and activities</li>
+                        <li>Personal expenses and tips</li>
+                        <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                `
+            },
+            spiti: {
+                title: "Spiti Valley Adventure",
+                image: "https://media.cntraveller.in/wp-content/uploads/2017/01/spiti-lead-image-1366x768.jpg",
+                description: "Experience the rugged beauty and serene landscapes of Spiti Valley with our adventure package.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Spiti Valley and transfer to hotel. Evening free for leisure.</li>
+                        <li><strong>Day 2:</strong> Full-day sightseeing including Key Monastery, Komic Village, and Langza Village.</li>
+                        <li><strong>Day 3:</strong> Explore the Dhankar Monastery and Lake. Visit Pin Valley National Park.</li>
+                        <li><strong>Day 4:</strong> Trek to Chandratal Lake. Evening departure.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹25,000 per person. The price includes accommodation, breakfast, and guided tours.",
+                inclusions: `
+                    <ul>
+                        <li>Accommodation in homestays and camps</li>
+                        <li>Daily breakfast</li>
+                        <li>Guided sightseeing tours</li>
+                        <li>All transfers by private vehicle</li>
+                        <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                    <ul>
+                        <li>Travel insurance</li>
+                        <li>Lunch and dinner</li>
+                        <li>Entry fees to monuments and activities</li>
+                        <li>Personal expenses and tips</li>
+                        <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                `
+            },
+            dharamshala: {
+                title: "Dharamshala Spiritual Retreat",
+                image: "https://www.holidify.com/images/bgImages/DHARAMSHALA.jpg",
+                description: "Discover the spiritual and cultural heritage of Dharamshala with our retreat package.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Dharamshala and transfer to hotel. Evening at leisure.</li>
+                        <li><strong>Day 2:</strong> Full-day tour including Dalai Lama Temple, Bhagsunath Temple, and Bhagsu Waterfall.</li>
+                        <li><strong>Day 3:</strong> Visit to Kangra Fort and Tea Gardens. Explore McLeod Ganj Market.</li>
+                        <li><strong>Day 4:</strong> Trek to Triund Hill. Evening departure.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹20,000 per person. The price includes accommodation, breakfast, and guided tours.",
+                inclusions: `
+                    <ul>
+                        <li>Accommodation in a 4-star hotel</li>
+                        <li>Daily breakfast</li>
+                        <li>Guided sightseeing tours</li>
+                        <li>All transfers by private vehicle</li>
+                        <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                    <ul>
+                        <li>Travel insurance</li>
+                        <li>Lunch and dinner</li>
+                        <li>Entry fees to monuments and activities</li>
+                        <li>Personal expenses and tips</li>
+                        <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                `
+            },
+            kasauli: {
+                title: "Kasauli Nature Escape",
+                image: "https://www.holidify.com/images/bgImages/KASAULI.jpg",
+                description: "Experience the tranquility of Kasauli, a serene hill station offering lush greenery, colonial charm, and breathtaking views.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Kasauli and transfer to the hotel. Spend the evening at leisure exploring the local market.</li>
+                        <li><strong>Day 2:</strong> Visit the Gilbert Trail, Sunset Point, and Monkey Point for scenic views and a relaxing experience.</li>
+                        <li><strong>Day 3:</strong> Explore Christ Church, a historical landmark, and enjoy a walk along Mall Road for local souvenirs.</li>
+                        <li><strong>Day 4:</strong> Departure after breakfast with beautiful memories of the serene hills.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹18,000 per person. The price includes accommodation, breakfast, and guided tours.",
+               inclusions: `
+                    <ul>
+                        <li>Accommodation in a 3-star hotel</li>
+                        <li>Daily breakfast</li>
+                        <li>Guided sightseeing tours</li>
+                        <li>All transfers by private vehicle</li>
+                        <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                    <ul>
+                         <li>Travel insurance</li>
+                         <li>Lunch and dinner</li>
+                         <li>Entry fees to monuments and activities</li>
+                         <li>Personal expenses and tips</li>
+                         <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                 `
+
+
+            },
+            goa: {
+                title: "Goa Beach Getaway",
+                image: "https://www.holidify.com/images/bgImages/GOA.jpg",
+                description: "Relax and unwind on the sandy beaches of Goa with our exclusive beach getaway package.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Goa and transfer to hotel. Evening free to explore nearby beaches.</li>
+                        <li><strong>Day 2:</strong> Full-day tour of North Goa including visits to Calangute Beach, Baga Beach, and Fort Aguada.</li>
+                        <li><strong>Day 3:</strong> South Goa sightseeing including Colva Beach, Palolem Beach, and Dudhsagar Waterfalls.</li>
+                        <li><strong>Day 4:</strong> Leisure day to relax on the beach or explore local markets. Evening departure.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹20,000 per person. The price includes accommodation, breakfast, and guided tours.",
+                inclusions: `
+                    <ul>
+                        <li>Accommodation in a 4-star hotel</li>
+                        <li>Daily breakfast</li>
+                        <li>Guided sightseeing tours</li>
+                        <li>All transfers by private vehicle</li>
+                        <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                    <ul>
+                        <li>Travel insurance</li>
+                        <li>Lunch and dinner</li>
+                        <li>Entry fees to monuments and activities</li>
+                        <li>Personal expenses and tips</li>
+                        <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                `
+            },
+            kerala: {
+                title: "Kerala Backwater Escape",
+                image: "https://www.holidify.com/images/bgImages/KERALA.jpg",
+                description: "Explore the tranquil backwaters and lush landscapes of Kerala with our exclusive escape package.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Kochi and transfer to hotel. Evening free to explore Fort Kochi.</li>
+                        <li><strong>Day 2:</strong> Transfer to Munnar. Visit tea plantations, Mattupetty Dam, and Eravikulam National Park.</li>
+                        <li><strong>Day 3:</strong> Transfer to Thekkady. Explore Periyar Wildlife Sanctuary and enjoy a boat ride on Periyar Lake.</li>
+                        <li><strong>Day 4:</strong> Transfer to Alleppey. Enjoy a houseboat cruise through the backwaters. Evening departure.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹25,000 per person. The price includes accommodation, breakfast, and guided tours.",
+                inclusions: `
+                    <ul>
+                        <li>Accommodation in 4-star hotels and houseboats</li>
+                        <li>Daily breakfast</li>
+                        <li>Guided sightseeing tours</li>
+                        <li>All transfers by private vehicle</li>
+                        <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                    <ul>
+                        <li>Travel insurance</li>
+                        <li>Lunch and dinner</li>
+                        <li>Entry fees to monuments and activities</li>
+                        <li>Personal expenses and tips</li>
+                        <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                `
+            },
+            jammu_kashmir: {
+                title: "Jammu & Kashmir Paradise Package",
+                image:  "https://www.holidify.com/images/bgImages/KASHMIR.jpg",
+                description: "Explore the scenic beauty and serene landscapes of Jammu & Kashmir with our exclusive paradise package.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Srinagar and transfer to houseboat. Shikara ride on Dal Lake in the evening.</li>
+                        <li><strong>Day 2:</strong> Full-day tour of Gulmarg including a cable car ride.</li>
+                        <li><strong>Day 3:</strong> Visit to Pahalgam and explore the beautiful Betaab Valley.</li>
+                        <li><strong>Day 4:</strong> Morning visit to Mughal Gardens and Shankaracharya Temple. Evening departure.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹30,000 per person. The price includes accommodation, breakfast, and guided tours.",
+                inclusions: `
+                    <ul>
+                        <li>Accommodation in 4-star hotels</li>
+                        <li>Daily breakfast</li>
+                        <li>Guided sightseeing tours</li>
+                        <li>All transfers by private vehicle</li>
+                        <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                     <ul>
+                        <li>Travel insurance</li>
+                        <li>Lunch and dinner</li>
+                        <li>Entry fees to monuments and activities</li>
+                        <li>Personal expenses and tips</li>
+                        <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                `
+            },
+            uttarakhand: {
+                title: "Uttarakhand Nature Escape",
+                image: "https://www.holidify.com/images/bgImages/UTTARAKHAND.jpg",
+                description: "Immerse yourself in the natural beauty of Uttarakhand with our exclusive nature escape package.",
+                itinerary: `
+                    <ul>
+                        <li><strong>Day 1:</strong> Arrival in Nainital and transfer to hotel. Evening visit to Naini Lake and Mall Road.</li>
+                        <li><strong>Day 2:</strong> Full-day tour of Nainital including Snow View Point, Naina Devi Temple, and Tiffin Top.</li>
+                        <li><strong>Day 3:</strong> Transfer to Jim Corbett National Park. Evening jungle safari.</li>
+                        <li><strong>Day 4:</strong> Morning safari in Jim Corbett. Transfer to Rishikesh for an evening Ganga Aarti. Departure in the evening.</li>
+                    </ul>
+                `,
+                pricing: "Starting from ₹28,000 per person. The price includes accommodation, breakfast, and guided tours.",
+                inclusions: `
+                    <ul>
+                        <li>Accommodation in 4-star hotels and houseboats</li>
+                        <li>Daily breakfast</li>
+                        <li>Guided sightseeing tours</li>
+                        <li>All transfers by private vehicle</li>
+                        <li>Assistance on arrival and departure</li>
+                    </ul>
+                `,
+                exclusions: `
+                    <ul>
+                        <li>Travel insurance</li>
+                        <li>Lunch and dinner</li>
+                        <li>Entry fees to monuments and activities</li>
+                        <li>Personal expenses and tips</li>
+                        <li>Any item not mentioned in the inclusions</li>
+                    </ul>
+                `
+            },
+        };
+
+        if (tourDetails[tour]) {
+            document.getElementById('tour-title').innerText = tourDetails[tour].title;
+            document.getElementById('tour-image').src = tourDetails[tour].image;
+            document.getElementById('tour-description').innerText = tourDetails[tour].description;
+            document.getElementById('tour-itinerary').innerHTML = tourDetails[tour].itinerary;
+            document.getElementById('tour-pricing').innerText = tourDetails[tour].pricing;
+            document.getElementById('tour-inclusions').innerHTML = tourDetails[tour].inclusions;
+            document.getElementById('tour-exclusions').innerHTML = tourDetails[tour].exclusions;
+        }
+    }
+
+    window.onload = getTourDetails;
+</script>
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="webpallu.html"><img src="c:\Users\Admin\Downloads\logo_ontheway.png" alt="Logo" class="logo"></a></li>
+                <li><a href="webpallu.html">Home</a></li>
+                <li><a href="tour.html">Tours</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="tour-details">
+            <img id="tour-image" src="" alt="Tour Image">
+            <h1 id="tour-title">Tour Title</h1>
+            <p id="tour-description">Tour Description</p>
+            <h2>Itinerary</h2>
+            <div id="tour-itinerary"></div>
+            <h2>Pricing</h2>
+            <p id="tour-pricing"></p>
+            <h2>Inclusions</h2>
+            <div id="tour-inclusions"></div>
+            <h2>Exclusions</h2>
+            <div id="tour-exclusions"></div>
+            <a href="reserve your spot.html" class="btn">reserve your spot</a>
+
+        </section>
+        
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>We provide the best travel experiences with top-notch service and unforgettable adventures. Discover the world with us.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="webpallu.html">Home</a></li>
+                    <li><a href="tour.html">Tours</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#terms">Terms & Conditions</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Address: Happy flower building Jawahar colony Bhattkuffer  Sanjauli shimla-06, Shimla, Himachal Pradesh 171006</p>
+                <p>Phone: +123-456-7890</p>
+                <p>Email: onthewayshimla@gmail.com</p>
+            </div>
+            <div class="footer-section social">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                   <li><a href="#"><i class="fab fa-facebook-f">facebook</i></a></li>
+                   <li><a href="#"><i class="fab fa-twitter">twitter</i></a></li>
+                   <li><a href="#"><i class="fab fa-instagram">instagram</i></a></li>
+                   <li><a href="#"><i class="fab fa-linkedin-in">linkedin</i></a></li>
+                </div>
+            </div>
+        </div>
+        
+   
+        <div class="footer-bottom" style="text-align: center; padding: 10px; background-color: #282c34; color: #ffffff;">
+            <p>&copy; 2024 On the way. All Rights Reserved.</p>
+        </div>
+        
+    </footer>
+        
+        
+   
+    
+
+    
+</body>
+</html>

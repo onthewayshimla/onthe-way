@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - On the way</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styles */
+header {
+            background-color: #7ab7f3; /* Light background color */
+            padding: 10px 20px; /* Padding around the header */
+            background-size: cover;
+            background-position: center;
+            color: black;
+            text-align: left;
+        }
+        /* Optional: Adjust the header's layout if needed */
+header nav ul {
+    margin-left: auto; /* Align menu items to the right if logo is left-aligned */
+}
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content:left ;
+            background: rgb(252, 250, 250); /* Semi-transparent background for better text readability */
+            padding: 10px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px; /* Space between menu items */
+        }
+
+        nav ul li a {
+            color: #0e0000; /* Color for menu items */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logo {
+    height: 50px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Main content styles */
+main {
+    padding: 2em;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #c5efff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    border-bottom: 3px solid #7ab7f3;
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+    color: black; 
+    text-align: center;
+    font-family: 'Dancing Script', cursive; /* Example of a different cursive font */
+
+}
+
+section {
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+section h3 {
+    border-bottom: 2px solid #7ab7f3; 
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    color: #555;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 2em;
+}
+
+blockquote {
+    background: #eee;
+    padding: 1em;
+    border-left: 5px solid #7ab7f3; 
+    margin: 1em 0;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 1em;
+    font-weight: bold;
+    color: black; 
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    padding: 0.7em;
+    margin-top: 0.5em;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+form input[type="submit"] {
+    margin-top: 1.5em;
+    padding: 0.7em;
+    background: #7ab7f3; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background: #7ab7f3; 
+}
+
+/* Footer styles */
+.footer-section.contact p {
+    color: #dddddd; /* Light gray text color */
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-section.contact a {
+    color: #7ab7f3; /* Blue link color */
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-section.contact a:hover {
+    color: #7ab7f3;  /* Darker blue link color on hover */
+}
+
+/* General footer styling */
+footer {
+    background-color: #282c34; /* Dark background color */
+    color: #ffffff; /* White text color */
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+    border-top: 3px solid #7ab7f3; 
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    margin: 20px 0;
+}
+
+.footer-section h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #ffffff; /* White heading color */
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section form {
+    margin: 0;
+    padding: 0;
+    color: #dddddd; /* Light gray text color */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #bbbbbb; /* Gray link color */
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #ffffff; /* White link color on hover */
+}
+
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1c2025;
+    color: #bbbbbb;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+    </style>
+</head>
+<body>
+    <!-- Include header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="webpallu.html"><img src="c:\Users\Admin\Downloads\logo_ontheway.png" alt="Logo" class="logo"></a></li>
+                <li><a href="webpallu.html">Home</a></li>
+                <li><a href="tour.html">Tours</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contact Us</h2>
+        <section>
+            
+            <p>If you have any questions or would like to know more about our services, please don't hesitate to contact us.</p>
+            <form action="submit_contact_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <section>
+            
+            <section>
+            <h4>Working Hours</h4>
+            <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+            <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
+            <p><strong>Sunday:</strong> Closed</p>
+        </section>
+
+        
+    </main>
+
+    <!-- Include footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Contact Section -->
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><strong>Address:</strong>Happy flower building Jawahar colony Bhattkuffer  Sanjauli shimla-06, Shimla, Himachal Pradesh 171006</p>
+                <p><strong>Phone:</strong> +91-8219559908</p>
+                <p><strong>Email:</strong> <a href="mailto:onthewayshimla@gmail.com">onthewayshimla@gmail.com</a></p>
+                <p><strong>Website:</strong> <a href="http:// .in" target="_blank"> .in</a></p>
+            </div>
+
+            <!-- Other Sections -->
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="webpallu.html">Home</a></li>
+                    <li><a href="tour.html">Tours</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 On the way. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
