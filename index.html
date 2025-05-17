@@ -22,10 +22,9 @@
             border-bottom: 2px solid #7ab7f3;
         }
         /* Optional: Adjust the header's layout if needed */
-header nav ul {
-    margin-left: auto; /* Align menu items to the right if logo is left-aligned */
-}
-
+        header nav ul {
+           margin-left: auto; /* Align menu items to the right if logo is left-aligned */
+        }
         nav ul {
             list-style: none;
             padding: 0;
@@ -48,9 +47,9 @@ header nav ul {
         
         }
         .logo {
-    height: 50px; /* Adjust the height as needed */
-    width: auto; /* Maintain aspect ratio */
-}
+          height: 50px; /* Adjust the height as needed */
+          width: auto; /* Maintain aspect ratio */
+        }
 
         .hero {
             background-image: url('https://static.toiimg.com/photo/105385238.cms'); /* Replace with your image URL */
@@ -63,34 +62,29 @@ header nav ul {
         }
 
         .hero h2 {
-    font-size: 3em;
-    margin: 0;
-    color: #fff;
-    background: #7ab7f3;
-    font-family: 'Pacifico', cursive; /* A script font that gives a traveling vibe */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: inline-block;
-    transform: rotate(-2deg); /* Slight rotation for a playful effect */
-}            
-.hero p {
-    font-size: 1.5em;
-    margin: 15px 0; /* Increased margin for better spacing */
-    padding: 20px; /* Slightly more padding for a more spacious feel */
-    color: #333; /* Darker text color for better contrast */
-    background: rgba(255, 255, 255, 0.8); /* Lighter semi-transparent background for better readability */
-    backdrop-filter: blur(8px); /* Slightly reduced blur for subtlety */
-    border-radius: 12px; /* Increased border-radius for a more rounded look */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for better depth */
-    font-family: 'Pacifico', cursive; /* Travel-themed font */
-    text-align: center; /* Center-align text for better layout */
-}
-
-
-
-
-
+          font-size: 3em;
+          margin: 0;
+          color: #fff;
+          background: #7ab7f3;
+          font-family: 'Pacifico', cursive; /* A script font that gives a traveling vibe */
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
+          padding: 10px 20px;
+          border-radius: 8px;
+          display: inline-block;
+          transform: rotate(-2deg); /* Slight rotation for a playful effect */
+        }            
+        .hero p {
+         font-size: 1.5em;
+         margin: 15px 0; /* Increased margin for better spacing */
+         padding: 20px; /* Slightly more padding for a more spacious feel */
+         color: #333; /* Darker text color for better contrast */
+         background: rgba(255, 255, 255, 0.8); /* Lighter semi-transparent background for better readability */
+         backdrop-filter: blur(8px); /* Slightly reduced blur for subtlety */
+         border-radius: 12px; /* Increased border-radius for a more rounded look */
+         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for better depth */
+         font-family: 'Pacifico', cursive; /* Travel-themed font */
+         text-align: center; /* Center-align text for better layout */
+        }
         .hero button {
             background: #7ab7f3; 
             color: black;
@@ -107,59 +101,53 @@ header nav ul {
 
         .container {
             padding: 20px;
-            #home h2 {
-    font-family: 'Great Vibes', cursive; /* Example of a cursive font */
-    font-size: 36px; /* Adjust the size as needed */
-    font-weight: bold; /* You can change this to normal, light, etc. */
-    color: #070707; /* Set the color to match your theme */
-}
-
-            #home p { 
-    font-family: 'Dancing Script', cursive; /* Example of a different cursive font */
-    font-size: 18px; /* Adjust the size as needed */
-    color:  #0a0a0a;  /* Set the color to match your theme */
-    line-height: 1.6; /* Adjusts the spacing between lines */
-}
-
-            
-        
+         #home h2 {
+            font-family: 'Great Vibes', cursive; /* Example of a cursive font */
+            font-size: 36px; /* Adjust the size as needed */
+            font-weight: bold; /* You can change this to normal, light, etc. */
+            color: #070707; /* Set the color to match your theme */
         }
 
-        .tour-packages {
-    background-color:  #c5efff;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    overflow-x: auto;
-    padding: 10px 0;
-    
-}
+         #home p { 
+         font-family: 'Dancing Script', cursive; /* Example of a different cursive font */
+         font-size: 18px; /* Adjust the size as needed */
+         color:  #0a0a0a;  /* Set the color to match your theme */
+        line-height: 1.6; /* Adjusts the spacing between lines */
+        }
+        }
 
+       .tour-packages {
+          background-color:  #c5efff;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 10px;
+          overflow-x: auto;
+          padding: 10px 0;
+        }
+        .tour-packages::-webkit-scrollbar {
+          height: 8px;
+        }
 
-.tour-packages::-webkit-scrollbar {
-    height: 8px;
-}
+        .tour-packages::-webkit-scrollbar-thumb {
+          background: #7ab7f3; 
+          border-radius: 4px;
+        }
 
-.tour-packages::-webkit-scrollbar-thumb {
-    background: #7ab7f3; 
-    border-radius: 4px;
-}
-
-.tour {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    text-align: center;
-    background: white;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
+       .tour {
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          text-align: center;
+          background: white;
+          position: relative;
+          overflow: hidden;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-between;
+        }
 
 .tour img {
     width: 100%;
